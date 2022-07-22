@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../asset/css/login.css';
+import { Link } from 'react-router-dom';
 
 import phone from '../asset/img/Group 57.png';
 
@@ -48,9 +49,9 @@ export class Login extends Component {
           </p>
           <a href="home-page.html">
             <div class="d-grid fw-button rounded">
-              <button class="btn" type="button">
+              <Link as="button" to="/dashboard" class="btn" type="button">
                 <span class="fw-login-btn">Login</span>
-              </button>
+              </Link>
             </div>
           </a>
           <p class="my-5 text-center fw-signup">
