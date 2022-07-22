@@ -23,7 +23,7 @@ export class Home extends Component {
         <nav>
           <h1>Zwallet</h1>
           <div>
-            <Link to="/" className="login">
+            <Link to="/login" className="login">
               Login
             </Link>
             <Link to="/" className="signup">
