@@ -186,12 +186,14 @@ section.about div .container .icon {
   border-radius: 25px;
   padding: 18px;
   color: #6379f4;
+  margin-bottom: 20px;
 }
 
 section.about div .container h3 {
   font-weight: 700;
   font-size: 24px;
   color: #3a3d42;
+  margin-bottom: 30px;
 }
 
 section.about div .container p {
@@ -318,6 +320,10 @@ section.users div div {
   margin-top: 60px;
   margin-left: 46px;
   margin-right: 46px;
+}
+
+section.users div div img {
+  margin-bottom: 30px;
 }
 
 section.users div div h5 {

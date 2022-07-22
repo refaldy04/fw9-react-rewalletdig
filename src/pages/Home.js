@@ -5,6 +5,16 @@ import { Link } from 'react-router-dom';
 import phone2 from '../asset/img/png-phone-2.png';
 import google from '../asset/img/Group.png';
 import apple from '../asset/img/icon.png';
+import microsoft from '../asset/img/Group 20.png';
+import dropbox from '../asset/img/Group 19.png';
+import hnm from '../asset/img/g45263.png';
+import airbnb from '../asset/img/logo 1 (1).png';
+import canon from '../asset/img/g3.png';
+import dell from '../asset/img/Group99.png';
+import mobileDisplay from '../asset/img/Group 54.png';
+import beard from '../asset/img/beard.png';
+
+import { FiPhone, FiLock, FiDownload, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
 export class Home extends Component {
   render() {
@@ -41,12 +51,12 @@ export class Home extends Component {
         </header>
 
         <section class="clients">
-          <img src="asset/img/Group 20.png" alt="microsoft" class="microsoft" />
-          <img src="asset/img/Group 19.png" alt="dropbox" class="dropbox" />
-          <img src="asset/img/g45263.png" alt="h and m" />
-          <img src="asset/img/logo 1 (1).png" alt="airbnb" />
-          <img src="asset/img/g3.png" alt="canon" />
-          <img src="asset/img/Group99.png" alt="dell" />
+          <img src={microsoft} alt="microsoft" class="microsoft" />
+          <img src={dropbox} alt="dropbox" class="dropbox" />
+          <img src={hnm} alt="h and m" />
+          <img src={airbnb} alt="airbnb" />
+          <img src={canon} alt="canon" />
+          <img src={dell} alt="dell" />
         </section>
 
         <section class="about">
@@ -57,21 +67,21 @@ export class Home extends Component {
           <div>
             <div class="container">
               <div class="icon">
-                <i data-feather="phone"></i>
+                <FiPhone />
               </div>
               <h3>24/7 Support</h3>
               <p>We have 24/7 contact support so you can contact us whenever you want and we will respond it.</p>
             </div>
             <div class="container main">
               <div class="icon">
-                <i data-feather="lock"></i>
+                <FiLock />
               </div>
               <h3>Data Privacy</h3>
               <p>We make sure your data is safe in our database and we will encrypt any data you submitted to us.</p>
             </div>
             <div class="container">
               <div class="icon">
-                <i data-feather="download"></i>
+                <FiDownload />
               </div>
               <h3>Easy Download</h3>
               <p>Zwallet is 100% totally free to use it’s now available on Google Play Store and App Store.</p>
@@ -80,7 +90,7 @@ export class Home extends Component {
         </section>
 
         <section class="features">
-          <img src="asset/img/Group 54.png" alt="mobile-display" />
+          <img src={mobileDisplay} alt="mobile-display" />
           <div>
             <h1>
               All The <span>Great</span> Zwallet Features.
@@ -116,10 +126,10 @@ export class Home extends Component {
           <p>We have some great features from the application and it's totally free to use by all users around the world.</p>
           <div>
             <a href="facebook.com">
-              <i data-feather="arrow-left"></i>
+              <FiArrowLeft />
             </a>
             <div>
-              <img src="asset/img/beard.png" alt="user" />
+              <img src={beard} alt="user" />
               <h5>Alex Hansinburg</h5>
               <p class="profesion">Designer</p>
               <p class="testimony">
@@ -128,7 +138,7 @@ export class Home extends Component {
               </p>
             </div>
             <a href="facebook.com">
-              <i data-feather="arrow-right"></i>
+              <FiArrowRight />
             </a>
           </div>
         </section>
