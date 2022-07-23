@@ -105,7 +105,7 @@ export class SearchReceiver extends Component {
               </Form>
 
               <div className="d-flex flex-column gap-5 mt-4 mt-xl-0">
-                <Link to="/" className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
+                <Link to="/input-amount" className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
                   <a href="input-amount-page.html" className="d-flex align-items-start gap-2 user">
                     <img src={samuel} alt="Samuel" className="img-fluid" />
                     <div className="d-flex flex-column justify-content-between">
