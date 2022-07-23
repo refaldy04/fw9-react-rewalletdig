@@ -33,7 +33,7 @@ export class Home extends Component {
         </nav>
 
         <header>
-          <img src={phone2} class="mobile-display" alt="mobile-display" />
+          <img src={phone2} className="mobile-display" alt="mobile-display" />
           <div>
             <h1>
               Awesome App For Saving <span class="tagline">Time.</span>
