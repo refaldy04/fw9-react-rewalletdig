@@ -6,6 +6,7 @@ import Count from './pages/Counter';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import SearchReceiver from './pages/SearchReceiver';
 
 export class App extends Component {
   render() {
@@ -15,6 +16,7 @@ export class App extends Component {
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="search-receiver" element={<SearchReceiver />} />
         <Route path="counter" element={<Count />} />
       </Routes>
     );
