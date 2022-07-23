@@ -8,6 +8,8 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import SearchReceiver from './pages/SearchReceiver';
 import InputAmount from './pages/InputAmount';
+import Confirmation from './pages/Confirmation';
+import StatusSuccess from './pages/StatusSuccess';
 
 export class App extends Component {
   render() {
@@ -19,6 +21,8 @@ export class App extends Component {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="search-receiver" element={<SearchReceiver />} />
         <Route path="input-amount" element={<InputAmount />} />
+        <Route path="confirmation" element={<Confirmation />} />
+        <Route path="status-success" element={<StatusSuccess />} />
         <Route path="counter" element={<Count />} />
       </Routes>
     );

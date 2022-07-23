@@ -9,7 +9,7 @@ import mellisa from '../asset/img/2.png';
 import jessica from '../asset/img/1.png';
 import michael from '../asset/img/Rectangle-25.png';
 
-import { FiSearch } from 'react-icons/fi';
+// import { FiSearch } from 'react-icons/fi';
 
 export class SearchReceiver extends Component {
   render() {
@@ -100,7 +100,7 @@ export class SearchReceiver extends Component {
                   {/* <span className="input-group-text fw9-input-search" id="addon-wrapping">
                     <FiSearch />
                   </span> */}
-                  <Form.Control type="text" className=" fw9-input-search" placeholder={<FiSearch /> + `Search receiver here`} aria-label="Username" aria-describedby="addon-wrapping" />
+                  <Form.Control type="text" className=" fw9-input-search" placeholder="Search receiver here" aria-label="Username" aria-describedby="addon-wrapping" />
                 </Form.Group>
               </Form>
 
