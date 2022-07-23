@@ -25,6 +25,7 @@ body {
 
 .fw-form {
   padding: 30px 150px 30px 70px;
+  overflow: hidden;
 }
 
 .fw-margin {
@@ -49,6 +50,7 @@ body {
   border: unset;
   border-radius: unset;
   border-bottom: 2px solid #a9a9a999;
+  background-color: unset;
 }
 
 .form-control:focus {

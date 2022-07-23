@@ -3,6 +3,7 @@ import '../asset/css/home-page.css';
 
 import profile from '../asset/img/robert.png';
 import graphic from '../asset/img/graphic.png';
+import { Link } from 'react-router-dom';
 
 export class Dashboard extends Component {
   render() {
@@ -65,10 +66,10 @@ export class Dashboard extends Component {
                   <i data-feather="grid" class="fw9-menu-active"></i>
                   <h3 class="fw9-menu-active">Dashboard</h3>
                 </a>
-                <a href="search-receiver-page.html" class="d-flex gap-4">
+                <Link to="/search-receiver" class="d-flex gap-4">
                   <i data-feather="arrow-up" class="fw9-menu"></i>
                   <h3 class="fw9-menu">Transfer</h3>
-                </a>
+                </Link>
                 <a href="top-up-page.html" class="d-flex gap-4">
                   <i data-feather="arrow-down" class="fw9-menu"></i>
                   <h3 class="fw9-menu">Top Up</h3>

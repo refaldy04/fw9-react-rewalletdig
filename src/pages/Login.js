@@ -7,7 +7,7 @@ import phone from '../asset/img/Group 57.png';
 export class Login extends Component {
   render() {
     return (
-      <main class="row vh-100">
+      <section class="row d-flex vh-100">
         <div class="col-md-7 fw-intro d-flex flex-column justify-content-center">
           <h1 class="fw-brand text-light">ZWALLET</h1>
           <figure class="figure text-center">
@@ -58,7 +58,7 @@ export class Login extends Component {
             Don't have an account? Let's <a href="signup-page.html">Sign Up</a>
           </p>
         </div>
-      </main>
+      </section>
     );
   }
 }
