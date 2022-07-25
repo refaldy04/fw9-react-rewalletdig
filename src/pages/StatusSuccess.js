@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import '../asset/css/status-success.css';
+import { Link } from 'react-router-dom';
 
 import profile from '../asset/img/robert.png';
+import check from '../asset/img/check.png';
+
+import { IconContext } from 'react-icons';
+import { FiDownload, FiShare2 } from 'react-icons/fi';
 export class StatusSuccess extends Component {
   render() {
     return (
@@ -87,7 +92,7 @@ export class StatusSuccess extends Component {
 
             <div className="col-lg-9 col-12 mt-5 mt-lg-0 d-flex flex-column gap-4 bg-light rounded-4 fw9-input-amount">
               <div className="rounded-circle d-flex justify-content-center align-items-center fw9-status mx-auto">
-                <img src="asset/img/check.png" alt="" />
+                <img src={check} alt="check" />
               </div>
 
               <p className="fw9-text-status mx-auto">Transfer Success</p>
@@ -130,14 +135,16 @@ export class StatusSuccess extends Component {
 
               <div className="d-flex flex-column flex-xl-row justify-content-end gap-3 mt-5">
                 <button type="button" className="btn fw9-submit-btn grey fw-bold text-light">
-                  <i data-feather="share-2" className="fw9-menu"></i>
+                  <IconContext.Provider value={{ size: '2em', color: 'gray' }}>
+                    <FiShare2 />
+                  </IconContext.Provider>
                 </button>
-                <button type="button" className="btn fw9-submit-btn grey fw-bold fw9-primary-clr">
-                  <i data-feather="download" className="fw9-primary-clr"></i> Download PDF
+                <button type="button" className="btn fw9-submit-btn grey fw-bold fw9-primary-clr d-flex align-items-center">
+                  {<FiDownload />} Download PDF
                 </button>
-                <a href="home-page.html" type="button" className="btn fw9-submit-btn fw-bold text-light">
+                <Link to="/dashboard" type="button" className="btn fw9-submit-btn fw-bold text-light d-flex align-items-center">
                   Continue
-                </a>
+                </Link>
               </div>
             </div>
           </div>

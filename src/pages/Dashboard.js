@@ -10,34 +10,63 @@ import christine from '../asset/img/2.png';
 import adobe from '../asset/img/adobe.png';
 
 class Card extends Component {
-  render() {
-    return (
-      <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
-        <div className="d-flex align-items-start gap-2">
-          <img src={this.props.img} alt="" className="img-fluid" />
-          <div className="d-flex flex-column justify-content-between">
-            <h5 className="name-history">{this.props.name}</h5>
-            <p className="type-history">{this.props.type}</p>
-          </div>
-        </div>
-        <h3 className="amount-history">{this.props.amount}</h3>
-      </div>
-    );
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {
+        success: true,
+        message: 'List users',
+        results: [
+          {
+            id: 1,
+            name: 'Samuel Suhi',
+            picture: samuel,
+            type: 'Transfer',
+            amount: 50000,
+          },
+          {
+            id: 2,
+            name: 'Netflix',
+            picture: netflix,
+            type: 'subscription',
+            amount: 50000,
+          },
+          {
+            id: 3,
+            name: 'Christine Mar...',
+            picture: christine,
+            type: 'Transfer',
+            amount: 50000,
+          },
+          {
+            id: 4,
+            name: 'Adobe Inc',
+            picture: adobe,
+            type: 'subscription',
+            amount: 50000,
+          },
+        ],
+      },
+    };
   }
-}
-class CardMinus extends Component {
   render() {
     return (
-      <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
-        <div className="d-flex align-items-start gap-2">
-          <img src={this.props.img} alt="" className="img-fluid" />
-          <div className="d-flex flex-column justify-content-between">
-            <h5 className="name-history">{this.props.name}</h5>
-            <p className="type-history">{this.props.type}</p>
+      <>
+        {this.state.data.results.map((user) => (
+          <div className="d-flex flex-column mt-3">
+            <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
+              <div className="d-flex align-items-start gap-2">
+                <img src={user.picture} alt="user" className="img-fluid" />
+                <div className="d-flex flex-column justify-content-between">
+                  <h5 className="name-history">{user.name}</h5>
+                  <p className="type-history">{user.type}</p>
+                </div>
+              </div>
+              <h3 className="amount-history">{user.amount}</h3>
+            </div>
           </div>
-        </div>
-        <h3 className="amount-history minus">{this.props.amount}</h3>
-      </div>
+        ))}
+      </>
     );
   }
 }
@@ -168,12 +197,12 @@ export class Dashboard extends Component {
                     </a>
                   </div>
 
-                  <div className="d-flex flex-column gap-3">
-                    <Card img={samuel} name="Samuel Suhi" type="Transfer" amount="+Rp50.000" />
-                    <CardMinus img={netflix} name="Netflix" type="Subscription" amount="-Rp149.000" />
+                  <Card />
+                  {/* <div className="d-flex flex-column gap-3">
+                    <Card img={netflix} name="Netflix" type="Subscription" amount="-Rp149.000" />
                     <Card img={christine} name="Christine Mar..." type="Transfer" amount="+Rp150.000" />
-                    <CardMinus img={adobe} name="Adobe Inc." type="Subscription" amount="-Rp249.000" />
-                  </div>
+                    <Card img={adobe} name="Adobe Inc." type="Subscription" amount="-Rp249.000" />
+                  </div> */}
                 </div>
               </div>
             </div>
