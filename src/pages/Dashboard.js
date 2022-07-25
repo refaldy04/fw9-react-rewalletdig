@@ -4,6 +4,43 @@ import '../asset/css/home-page.css';
 import profile from '../asset/img/robert.png';
 import graphic from '../asset/img/graphic.png';
 import { Link } from 'react-router-dom';
+import samuel from '../asset/img/David.png';
+import netflix from '../asset/img/netflix.png';
+import christine from '../asset/img/2.png';
+import adobe from '../asset/img/adobe.png';
+
+class Card extends Component {
+  render() {
+    return (
+      <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
+        <div className="d-flex align-items-start gap-2">
+          <img src={this.props.img} alt="" className="img-fluid" />
+          <div className="d-flex flex-column justify-content-between">
+            <h5 className="name-history">{this.props.name}</h5>
+            <p className="type-history">{this.props.type}</p>
+          </div>
+        </div>
+        <h3 className="amount-history">{this.props.amount}</h3>
+      </div>
+    );
+  }
+}
+class CardMinus extends Component {
+  render() {
+    return (
+      <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
+        <div className="d-flex align-items-start gap-2">
+          <img src={this.props.img} alt="" className="img-fluid" />
+          <div className="d-flex flex-column justify-content-between">
+            <h5 className="name-history">{this.props.name}</h5>
+            <p className="type-history">{this.props.type}</p>
+          </div>
+        </div>
+        <h3 className="amount-history minus">{this.props.amount}</h3>
+      </div>
+    );
+  }
+}
 
 export class Dashboard extends Component {
   render() {
@@ -31,28 +68,28 @@ export class Dashboard extends Component {
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li>
-                <a className="dropdown-item active" href="#" aria-current="true">
+                <a className="dropdown-item active" href="facebook.com" aria-current="true">
                   Dashboard
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="facebook.com">
                   Transfer
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="facebook.com">
                   Top Up
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="facebook.com">
                   Profile
                 </a>
               </li>
               <hr />
               <li>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="facebook.com">
                   Log Out
                 </a>
               </li>
@@ -80,7 +117,7 @@ export class Dashboard extends Component {
                 </a>
               </div>
               <div>
-                <a href="" className="d-flex gap-4">
+                <a href="facebook.com" className="d-flex gap-4">
                   <i data-feather="log-out" className="fw9-menu"></i>
                   <h3 className="fw9-menu">Log Out</h3>
                 </a>
@@ -132,46 +169,10 @@ export class Dashboard extends Component {
                   </div>
 
                   <div className="d-flex flex-column gap-3">
-                    <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
-                      <div className="d-flex align-items-start gap-2">
-                        <img src="asset/img/David.png" alt="" className="img-fluid" />
-                        <div className="d-flex flex-column justify-content-between">
-                          <h5 className="name-history">Samuel Suhi</h5>
-                          <p className="type-history">Transfer</p>
-                        </div>
-                      </div>
-                      <h3 className="amount-history">+Rp50.000</h3>
-                    </div>
-                    <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
-                      <div className="d-flex align-items-start gap-2">
-                        <img src="asset/img/netflix.png" alt="" className="img-fluid" />
-                        <div className="d-flex flex-column justify-content-between">
-                          <h5 className="name-history">Netflix</h5>
-                          <p className="type-history">Subscription</p>
-                        </div>
-                      </div>
-                      <h3 className="amount-history minus">-Rp149.000</h3>
-                    </div>
-                    <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
-                      <div className="d-flex align-items-start gap-2">
-                        <img src="asset/img/2.png" alt="" className="img-fluid" />
-                        <div className="d-flex flex-column justify-content-between">
-                          <h5 className="name-history">Christine Mar...</h5>
-                          <p className="type-history">Transfer</p>
-                        </div>
-                      </div>
-                      <h3 className="amount-history">+Rp150.000</h3>
-                    </div>
-                    <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
-                      <div className="d-flex align-items-start gap-2">
-                        <img src="asset/img/adobe.png" alt="" className="img-fluid" />
-                        <div className="d-flex flex-column justify-content-between">
-                          <h5 className="name-history">Adobe Inc.</h5>
-                          <p className="type-history">Subscription</p>
-                        </div>
-                      </div>
-                      <h3 className="amount-history minus">-Rp249.000</h3>
-                    </div>
+                    <Card img={samuel} name="Samuel Suhi" type="Transfer" amount="+Rp50.000" />
+                    <CardMinus img={netflix} name="Netflix" type="Subscription" amount="-Rp149.000" />
+                    <Card img={christine} name="Christine Mar..." type="Transfer" amount="+Rp150.000" />
+                    <CardMinus img={adobe} name="Adobe Inc." type="Subscription" amount="-Rp249.000" />
                   </div>
                 </div>
               </div>
