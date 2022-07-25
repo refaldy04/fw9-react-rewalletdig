@@ -198,11 +198,6 @@ export class Dashboard extends Component {
                   </div>
 
                   <Card />
-                  {/* <div className="d-flex flex-column gap-3">
-                    <Card img={netflix} name="Netflix" type="Subscription" amount="-Rp149.000" />
-                    <Card img={christine} name="Christine Mar..." type="Transfer" amount="+Rp150.000" />
-                    <Card img={adobe} name="Adobe Inc." type="Subscription" amount="-Rp249.000" />
-                  </div> */}
                 </div>
               </div>
             </div>

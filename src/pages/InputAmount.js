@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../asset/css/input-amount.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import FormInputMoney from '../component/FormInputMoney';
+// import Button from 'react-bootstrap/Button';
 
 import profile from '../asset/img/robert.png';
 import david from '../asset/img/David.png';
@@ -100,25 +102,14 @@ export class InputAmount extends Component {
               </div>
               <p className="guide-transfer">Type the amount you want to transfer and then press continue to the next steps.</p>
               <div className="d-flex flex-column align-items-center">
-                <h1 className="text-secondary">0.00</h1>
-                <p>Rp120.000 Available</p>
-                <div className="col-auto my-5">
-                  <label className="visually-hidden" htmlFor="autoSizingInputGroup">
-                    Email
-                  </label>
-                  <div className="input-group">
-                    <div className="input-group-text">
-                      <i data-feather="edit-2"></i>
-                    </div>
-                    <input type="text" className="form-control" placeholder="Add some notes" />
-                  </div>
-                </div>
-              </div>
-              <div className="d-flex justify-content-end">
-                <Link to="/confirmation" type="button" className="btn btn-primary fw9-submit-btn">
+                <FormInputMoney />
+                {/* <input type="text" className="text-secondary fw9-input-money text-center fs-1" placeholder="0.0" /> */}
+
+                {/* <Button variant="primary" type="submit" className="btn btn-primary fw9-submit-btn">
                   Continue
-                </Link>
+                </Button> */}
               </div>
+              <div className="d-flex justify-content-end"></div>
             </div>
           </div>
         </main>

@@ -1,0 +1,54 @@
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+
+const loginSchema = Yup.object().shape({
+  amount: Yup.number().min(10000, 'minimum Rp 10.000').required('Required'),
+});
+
+const AuthForm = ({ errors, handleSubmit, handleChange }) => {
+  return (
+    <Form noValidate onSubmit={handleSubmit} className="d-flex flex-column align-items-center">
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        {/* <Form.Label>Email address</Form.Label> */}
+        <Form.Control name="amount" type="text" onChange={handleChange} placeholder="0.0" className="text-secondary fw9-input-money text-center fs-1" isInvalid={!!errors.amount} />
+        <Form.Control.Feedback type="invalid" className="text-center">
+          {errors.amount}
+        </Form.Control.Feedback>
+        {/* <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text> */}
+      </Form.Group>
+      <p>Rp120.000 Available</p>
+      <div className="col-auto my-5">
+        <label className="visually-hidden" htmlFor="autoSizingInputGroup">
+          Email
+        </label>
+        <div className="input-group">
+          <div className="input-group-text">
+            <i data-feather="edit-2"></i>
+          </div>
+          <input type="text" className="form-control" placeholder="Add some notes" />
+        </div>
+      </div>
+
+      <Button to="/dashboard" variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+  );
+};
+
+export default function FormInputMoney() {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate('/confirmation');
+  }
+  return (
+    <Formik initialValues={{ amount: '' }} onSubmit={handleClick} validationSchema={loginSchema}>
+      {(props) => <AuthForm {...props} />}
+    </Formik>
+  );
+}
