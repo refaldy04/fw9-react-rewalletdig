@@ -5,8 +5,8 @@ import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
-const loginSchema = Yup.object().shape({
-  amount: Yup.number().min(10000, 'minimum Rp 10.000').required('Required'),
+const amountSchema = Yup.object().shape({
+  amount: Yup.number().min(10000, 'minimum Rp 10.000').max(5000000, 'maximum Rp 5.000.000').required('Required'),
 });
 
 const AuthForm = ({ errors, handleSubmit, handleChange }) => {
@@ -33,9 +33,11 @@ const AuthForm = ({ errors, handleSubmit, handleChange }) => {
         </div>
       </div>
 
-      <Button to="/dashboard" variant="primary" type="submit">
-        Submit
-      </Button>
+      <div>
+        <Button variant="primary" type="submit" className="fw-login-btn text-light">
+          Continue
+        </Button>
+      </div>
     </Form>
   );
 };
@@ -46,8 +48,9 @@ export default function FormInputMoney() {
   function handleClick() {
     navigate('/confirmation');
   }
+  console.log(Formik);
   return (
-    <Formik initialValues={{ amount: '' }} onSubmit={handleClick} validationSchema={loginSchema}>
+    <Formik initialValues={{ amount: '' }} onSubmit={handleClick} validationSchema={amountSchema}>
       {(props) => <AuthForm {...props} />}
     </Formik>
   );

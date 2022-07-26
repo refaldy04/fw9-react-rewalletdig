@@ -29,14 +29,14 @@ const AuthForm = ({ errors, handleSubmit, handleChange }) => {
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group> */}
       {/* <HomeButton /> */}
-      <Button to="/dashboard" variant="primary" type="submit">
-        Submit
+      <Button to="/dashboard" variant="primary" type="submit" className="fw-login-btn text-light">
+        Login
       </Button>
     </Form>
   );
 };
 
-function BasicExample() {
+function FormInput() {
   const navigate = useNavigate();
 
   function handleClick() {
@@ -49,4 +49,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default FormInput;

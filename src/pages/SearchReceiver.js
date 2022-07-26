@@ -106,13 +106,13 @@ export class SearchReceiver extends Component {
 
               <div className="d-flex flex-column gap-5 mt-4 mt-xl-0">
                 <Link to="/input-amount" className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
-                  <a href="input-amount-page.html" className="d-flex align-items-start gap-2 user">
+                  <div className="d-flex align-items-start gap-2 user text-dark">
                     <img src={samuel} alt="Samuel" className="img-fluid" />
                     <div className="d-flex flex-column justify-content-between">
                       <h5 className="name-history">Samuel Suhi</h5>
                       <p className="type-history">+62 813-8492-9994</p>
                     </div>
-                  </a>
+                  </div>
                 </Link>
                 <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row">
                   <div className="d-flex align-items-start gap-2">
