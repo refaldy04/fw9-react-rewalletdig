@@ -26,10 +26,10 @@ const AuthForm = ({ errors, handleSubmit, handleChange }) => {
           Email
         </label>
         <div className="input-group">
-          <div className="input-group-text">
+          {/* <div className="input-group-text">
             <i data-feather="edit-2"></i>
-          </div>
-          <input type="text" className="form-control" placeholder="Add some notes" />
+          </div> */}
+          <input type="text" className="form-control text-center" placeholder="Add some notes" />
         </div>
       </div>
 

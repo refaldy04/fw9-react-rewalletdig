@@ -13,7 +13,7 @@ export class InputAmount extends Component {
       <>
         <nav className="fw9-navbar">
           <div className="row d-flex justify-content-between container">
-            <h1 className="fw9-brand col-lg-6 mb-5 mb-lg-0">ZWALLET</h1>
+            <h1 className="fw9-brand col-lg-6 mb-5 mb-lg-0">RE-WALLET</h1>
             <div className="d-flex gap-3 align-items-start col-lg-6 justify-content-lg-end">
               <img src={profile} className="img-fluid fw9-profile-pict" alt="profile" />
               <div className="d-flex flex-column justify-content-end">
@@ -28,7 +28,7 @@ export class InputAmount extends Component {
         </nav>
         <main>
           <div className="dropdown d-lg-none d-block">
-            <button className="fw9-btn-menu btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button className="fw9-btn-menu text-light btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               Menu
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -114,10 +114,10 @@ export class InputAmount extends Component {
           </div>
         </main>
         <footer className="d-flex flex-column flex-lg-row justify-content-lg-between">
-          <p>2020 Zwallet. All right reserved.</p>
+          <p>2020 Re-wallet. All right reserved.</p>
           <div className="d-flex gap-lg-5 flex-column flex-lg-row">
             <p>+62 5637 8882 9901</p>
-            <p>contact@zwallet.com</p>
+            <p>contact@rewallet.com</p>
           </div>
         </footer>
       </>

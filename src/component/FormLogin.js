@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const loginSchema = Yup.object().shape({
   email: Yup.string().email('invalid email format wkwkwk').required('Required'),
@@ -29,9 +29,14 @@ const AuthForm = ({ errors, handleSubmit, handleChange }) => {
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group> */}
       {/* <HomeButton /> */}
-      <Button to="/dashboard" variant="primary" type="submit" className="fw-login-btn text-light">
-        Login
-      </Button>
+      <p class="mt-4 text-end fw-forgot-pw">
+        <Link to="/confirm-email">Forgot password?</Link>
+      </p>
+      <div className="d-grid">
+        <Button to="/dashboard" variant="primary" type="submit" className="fw-login-btn text-light">
+          Login
+        </Button>
+      </div>
     </Form>
   );
 };

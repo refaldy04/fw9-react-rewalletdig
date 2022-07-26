@@ -18,7 +18,7 @@ nav {
 nav h1 {
   font-weight: 700;
   font-size: 29px;
-  color: #6379f4;
+  color: #06283d;
 }
 
 nav div {
@@ -31,7 +31,7 @@ nav div .login {
   align-items: center;
   margin-right: 30px;
   text-decoration: none;
-  border: 2px solid #6379f4;
+  border: 2px solid #06283d;
   box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
   border-radius: 12px;
   min-width: 120px;
@@ -39,7 +39,7 @@ nav div .login {
   padding: 11px 36px;
   font-weight: 700;
   font-size: 18px;
-  color: #6379f4;
+  color: #06283d;
 }
 
 nav div .signup {
@@ -49,7 +49,7 @@ nav div .signup {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  background-color: #6379f4;
+  background-color: #06283d;
   box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
   border-radius: 12px;
   min-width: 120px;
@@ -80,7 +80,7 @@ header div h1 {
 }
 
 header div h1 span.tagline {
-  color: #6379f4;
+  color: #06283d;
 }
 
 header div p {
@@ -97,7 +97,7 @@ header div .try-it {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #6379f4;
+  background: #06283d;
   box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
   border-radius: 12px;
   min-width: 173px;
@@ -142,7 +142,7 @@ section.about h1 {
   font-weight: 800;
   font-size: 60px;
   line-height: 93px;
-  color: #6379f4;
+  color: #06283d;
   text-align: center;
 }
 
@@ -185,7 +185,7 @@ section.about div .container .icon {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
   border-radius: 25px;
   padding: 18px;
-  color: #6379f4;
+  color: #06283d;
   margin-bottom: 20px;
 }
 
@@ -219,7 +219,7 @@ section.features div h1 {
 }
 
 section.features div h1 span {
-  color: #6379f4;
+  color: #06283d;
 }
 
 section.features div .container {
@@ -241,7 +241,7 @@ section.features div .container div span {
   margin-right: 15px;
   font-weight: 700;
   font-size: 22px;
-  color: #6379f4;
+  color: #06283d;
   padding: 0;
 }
 
@@ -277,7 +277,7 @@ section.users h1 {
 }
 
 section.users h1 span {
-  color: #6379f4;
+  color: #06283d;
 }
 
 section.users p {
@@ -353,7 +353,7 @@ section.users div div .testimony {
 }
 
 footer {
-  background-color: #6379f4;
+  background-color: #06283d !important;
   padding: 80px 150px;
 }
 

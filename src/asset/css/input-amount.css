@@ -136,45 +136,45 @@ input.fw9-input-money:focus-visible {
 }
 
 .fw9-submit-btn {
-  background-color: #6379f4;
+  background-color: #06283d;
 }
 
 .fw9-submit-btn:hover {
-  background-color: #3d59f5;
+  background-color: #06283d;
   border: unset;
   box-shadow: unset;
 }
 
 .fw9-submit-btn:active .btn:active {
-  background-color: #3d59f5;
+  background-color: #06283d;
   border: unset;
   box-shadow: unset;
   border: unset;
 }
 
 .btn:active {
-  background-color: #3d59f5;
+  background-color: #06283d;
   border: unset;
   box-shadow: unset;
   border: unset;
 }
 
 .fw9-submit-btn:focus .btn:focus {
-  background-color: #3d59f5;
+  background-color: #06283d;
   border: unset;
   box-shadow: unset;
   border: unset;
 }
 
 .btn:focus {
-  background-color: #3d59f5;
+  background-color: #06283d;
   border: unset;
   box-shadow: unset;
   border: unset;
 }
 
 footer {
-  background-color: #6379f4;
+  background-color: #06283d;
   padding: 20px 150px;
 }
 

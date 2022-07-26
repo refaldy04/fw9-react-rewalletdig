@@ -5,7 +5,7 @@
 }
 
 .fw9-primary-clr {
-  color: #6379f4;
+  color: #06283d;
 }
 
 .fw9-navbar {
@@ -17,7 +17,7 @@
 .fw9-brand {
   font-weight: 700;
   font-size: 29px;
-  color: #6379f4;
+  color: #06283d;
 }
 
 .fw9-name-user {
@@ -35,7 +35,7 @@ main {
 }
 
 .fw9-btn-menu {
-  background-color: #6379f4;
+  background-color: #06283d;
 }
 
 .fw9-menu-list {
@@ -57,7 +57,7 @@ main {
 .fw9-menu-active {
   font-weight: 400;
   font-size: 18px;
-  color: #6379f4;
+  color: #06283d;
 }
 
 .fw9-input-amount {
@@ -107,11 +107,11 @@ main {
 .name-history span {
   font-weight: 700;
   font-size: 18px;
-  color: #6379f4;
+  color: #06283d;
 }
 
 footer {
-  background-color: #6379f4;
+  background-color: #06283d;
   padding: 20px 150px;
 }
 

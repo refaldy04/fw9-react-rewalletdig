@@ -27,7 +27,7 @@ export class Confirmation extends Component {
 
         <main>
           <div className="dropdown d-lg-none d-block">
-            <button className="fw9-btn-menu btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button className="fw9-btn-menu text-light btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               Menu
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -180,10 +180,10 @@ export class Confirmation extends Component {
         </main>
 
         <footer className="d-flex flex-column flex-lg-row justify-content-lg-between">
-          <p>2020 Zwallet. All right reserved.</p>
+          <p>2020 Re-wallet. All right reserved.</p>
           <div className="d-flex gap-lg-5 flex-column flex-lg-row">
             <p>+62 5637 8882 9901</p>
-            <p>contact@zwallet.com</p>
+            <p>contact@rewallet.com</p>
           </div>
         </footer>
       </>

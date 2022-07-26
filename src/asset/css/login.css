@@ -76,12 +76,12 @@ a {
   /* color: #88888f; */
   font-weight: 700;
   font-size: 18px;
-  background-color: #6379f4;
+  background-color: #06283d;
   border: unset;
 }
 
 .fw-login-btn:hover {
-  background-color: #2e48df;
+  background-color: #0a476d;
 }
 
 .fw-signup {
@@ -91,12 +91,16 @@ a {
 }
 
 .fw-signup a {
-  color: #6379f4;
+  color: #06283d;
 }
 
 @media only screen and (max-width: 768px) {
+  .fw-intro {
+    padding: 30px 30px;
+  }
+
   .fw-form {
-    padding: 30px 100px;
+    padding: 30px 30px;
   }
 
   .fw-signup {

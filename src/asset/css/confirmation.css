@@ -13,7 +13,7 @@
 .fw9-brand {
   font-weight: 700;
   font-size: 29px;
-  color: #6379f4;
+  color: #06283d;
 }
 
 .fw9-name-user {
@@ -31,7 +31,7 @@ main {
 }
 
 .fw9-btn-menu {
-  background-color: #6379f4;
+  background-color: #06283d !important;
 }
 
 .fw9-menu-list {
@@ -49,7 +49,7 @@ main {
 .fw9-menu-active {
   font-weight: 400;
   font-size: 18px;
-  color: #6379f4;
+  color: #06283d;
 }
 
 .fw9-input-amount {
@@ -105,11 +105,11 @@ main {
 }
 
 .fw9-submit-btn {
-  background-color: #6379f4;
+  background-color: #06283d;
 }
 
 footer {
-  background-color: #6379f4;
+  background-color: #06283d;
   padding: 20px 150px;
 }
 
@@ -148,7 +148,7 @@ footer p {
 .fw9-brand {
   font-weight: 700;
   font-size: 29px;
-  color: #6379f4;
+  color: #06283d;
 }
 
 .fw9-name-user {
@@ -166,7 +166,7 @@ main {
 }
 
 .fw9-btn-menu {
-  background-color: #6379f4;
+  background-color: #06283d !important;
 }
 
 .fw9-menu-list {
@@ -188,7 +188,7 @@ main {
 .fw9-menu-active {
   font-weight: 400;
   font-size: 18px;
-  color: #6379f4;
+  color: #06283d;
 }
 
 .fw9-detail {
@@ -227,7 +227,7 @@ main {
 }
 
 .fw9-submit-btn {
-  background-color: #6379f4;
+  background-color: #06283d;
   color: #514f5b;
 }
 
@@ -250,7 +250,7 @@ div.fw9-modal a {
 }
 
 footer {
-  background-color: #6379f4;
+  background-color: #06283d;
   padding: 20px 150px;
 }
 

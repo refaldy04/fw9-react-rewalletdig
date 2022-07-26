@@ -57,14 +57,11 @@ section {
   color: #3a3d42cc;
 }
 
-a {
-  text-decoration: none;
+.btn {
+  background-color: #06283d;
 }
-
-.fw-login-btn {
-  color: #88888f;
-  font-weight: 700;
-  font-size: 18px;
+.btn:hover {
+  background-color: #115077;
 }
 
 .fw-signup {
@@ -74,7 +71,7 @@ a {
 }
 
 .fw-signup a {
-  color: #6379f4;
+  color: #06283d !important;
 }
 
 @media only screen and (max-width: 768px) {
