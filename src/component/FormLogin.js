@@ -2,8 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link /*useLocation*/ } from 'react-router-dom';
+// import { Alert } from 'bootstrap';
 
 const loginSchema = Yup.object().shape({
   email: Yup.string().email('invalid email format wkwkwk').required('Required'),
@@ -15,8 +15,14 @@ const onLogin = () => {
 };
 
 const AuthForm = ({ errors, handleSubmit, handleChange }) => {
+  // const location = useLocation();
   return (
     <Form noValidate onSubmit={handleSubmit}>
+      {/* {location.state?.errMsg && (
+        <div>
+          <Alert variant="danger">{location.state.errMsg}</Alert>
+        </div>
+      )} */}
       <Form.Group className="mb-3" controlId="formBasicEmail">
         {/* <Form.Label>Email address</Form.Label> */}
         <Form.Control name="email" type="email" onChange={handleChange} placeholder="Enter email" isInvalid={!!errors.email} />

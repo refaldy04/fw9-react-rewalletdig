@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export class Menu extends Component {
+  onLogout = () => {
+    localStorage.removeItem('auth');
+  };
   render() {
     return (
       <div className="col-lg-3 flex-column justify-content-between bg-light fw9-menu-list d-none d-lg-flex">
@@ -24,10 +27,10 @@ export class Menu extends Component {
           </Link>
         </div>
         <div>
-          <a href="facebook.com" className="d-flex gap-4">
+          <Link to="/login" onClick={this.onLogout} className=" d-flex gap-4">
             <i data-feather="log-out" className="fw9-menu"></i>
             <h3 className="fw9-menu">Log Out</h3>
-          </a>
+          </Link>
         </div>
       </div>
     );
