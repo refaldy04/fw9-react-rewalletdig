@@ -9,12 +9,20 @@ import ArrowLeft from '../asset/img/arrow-left.png';
 import Samuel from '../asset/img/David.png';
 import { Link } from 'react-router-dom';
 import Footer from '../component/Footer';
+// import { Button } from 'bootstrap';
 
 export class Profile extends Component {
+  componentDidMount() {
+    localStorage.setItem('auth', 'hello');
+  }
+
   render() {
     return (
       <>
         <Navbar />
+        {/* <Button className="btn btn-success text-dark fw-bold" onClick={() => localStorage.setItem('auth', 'hello')}>
+          Click me
+        </Button> */}
         <main>
           <Dropdown />
 

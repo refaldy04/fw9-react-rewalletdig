@@ -18,6 +18,7 @@ import ConfirmEmail from './pages/ConfirmEmail';
 import ResetPassword from './pages/ResetPassword';
 import Profile from './pages/Profile';
 import PersonalInformation from './pages/PersonalInformation';
+import PrivateRoute from './component/PrivateRoute';
 
 export class App extends Component {
   render() {
@@ -26,7 +27,14 @@ export class App extends Component {
         {/* <Route path="/" element={<Example />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
-        <Route path="dashboard" element={<Dashboard />} />
+        <Route
+          path="dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
         <Route path="search-receiver" element={<SearchReceiver />} />
         <Route path="input-amount" element={<InputAmount />} />
         <Route path="confirmation" element={<Confirmation />} />
