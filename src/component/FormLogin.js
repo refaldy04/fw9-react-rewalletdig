@@ -10,6 +10,10 @@ const loginSchema = Yup.object().shape({
   password: Yup.string().min(4).required('Required'),
 });
 
+const onLogin = () => {
+  localStorage.setItem('auth', 'random-token');
+};
+
 const AuthForm = ({ errors, handleSubmit, handleChange }) => {
   return (
     <Form noValidate onSubmit={handleSubmit}>
@@ -29,11 +33,11 @@ const AuthForm = ({ errors, handleSubmit, handleChange }) => {
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group> */}
       {/* <HomeButton /> */}
-      <p class="mt-4 text-end fw-forgot-pw">
+      <p className="mt-4 text-end fw-forgot-pw">
         <Link to="/confirm-email">Forgot password?</Link>
       </p>
       <div className="d-grid">
-        <Button to="/dashboard" variant="primary" type="submit" className="fw-login-btn text-light">
+        <Button variant="primary" type="submit" onClick={onLogin} className="fw-login-btn text-light">
           Login
         </Button>
       </div>
