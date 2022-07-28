@@ -14,7 +14,14 @@ import dell from '../asset/img/Group99.png';
 import mobileDisplay from '../asset/img/Group 54.png';
 import beard from '../asset/img/beard.png';
 
+// import { useSelector } from 'react-redux';
+
 import { FiPhone, FiLock, FiDownload, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+
+// function Test() {
+//   const hahaha = useSelector((state) => state.berhitung.value);
+//   return <div>{hahaha}</div>;
+// }
 
 export class Home extends Component {
   render() {
@@ -26,6 +33,7 @@ export class Home extends Component {
             <Link to="/login" className="login">
               Login
             </Link>
+            {/* <Test /> */}
             <Link to="/sign-up" className="signup">
               Sign Up
             </Link>

@@ -54,6 +54,10 @@ main {
   color: rgba(58, 61, 66, 0.8);
 }
 
+.btn {
+  margin-top: unset;
+}
+
 .fw9-transaction:hover {
   background-color: #06283d;
   border-color: #ffffff;

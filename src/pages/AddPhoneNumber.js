@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import '../asset/css/personal-info.css';
 import Navbar from '../component/Navbar';
 import Dropdown from '../component/Dropdown';
 import Footer from '../component/Footer';
+import '../asset/css/add-phone-number.css';
 import { Link } from 'react-router-dom';
 
-export class PersonalInformation extends Component {
+export class AddPhoneNumber extends Component {
   render() {
     return (
-      <>
+      <div>
         <Navbar />
-
         <main>
           <Dropdown />
 
@@ -43,37 +42,31 @@ export class PersonalInformation extends Component {
             </div>
 
             <div className="col-lg-9 col-12 mt-5 mt-lg-0 d-flex flex-column gap-2 bg-light rounded-4 fw9-input-amount">
-              <h4>Personal Information</h4>
-              <p>We got your personal information from the sign up proccess. If you want to make changes on your information, contact our support.</p>
-              <div>
-                <div className="flex flex-column bg-light container">
-                  <h5 className="key">First Name</h5>
-                  <h2 className="value">Robert</h2>
-                </div>
-                <div className="flex flex-column bg-light container">
-                  <h5 className="key">Last Name</h5>
-                  <h2 className="value">Chandler</h2>
-                </div>
-                <div className="flex flex-column bg-light container">
-                  <h5 className="key">Verified E-mail</h5>
-                  <h2 className="value">pewdiepie1@gmail.com</h2>
-                </div>
-                <div className="d-flex flex-column flex-lg-row justify-content-between bg-light container">
-                  <div>
-                    <h5 className="key">Phone Number</h5>
-                    <h2 className="value">+62 813-9387-7946</h2>
+              <h4>Add Phone Number</h4>
+              <p>Add at least one phone number for the transfer ID so you can start transfering your money to another user.</p>
+              <div className="mx-auto">
+                <div className="col-auto my-5">
+                  <label className="visually-hidden" htmlFor="autoSizingInputGroup">
+                    Email
+                  </label>
+                  <div className="input-group">
+                    <span className="fw-bold">+62</span>
+                    <input type="text" className="form-control" placeholder="Enter your phone number" />
                   </div>
-                  <Link to="/manage-phone-number">Manage</Link>
                 </div>
+                <Link to="/personal-information" className="d-grid gap-2 my-5">
+                  <button className="btn btn-primary" type="button">
+                    Continue
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </main>
-
         <Footer />
-      </>
+      </div>
     );
   }
 }
 
-export default PersonalInformation;
+export default AddPhoneNumber;

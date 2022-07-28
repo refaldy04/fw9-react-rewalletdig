@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import '../asset/css/personal-info.css';
+import '../asset/css/change-pin.css';
 import Navbar from '../component/Navbar';
 import Dropdown from '../component/Dropdown';
-import Footer from '../component/Footer';
 import { Link } from 'react-router-dom';
+import Footer from '../component/Footer';
 
-export class PersonalInformation extends Component {
+export class ChangePin extends Component {
   render() {
     return (
-      <>
+      <div>
         <Navbar />
-
         <main>
           <Dropdown />
 
@@ -43,37 +42,42 @@ export class PersonalInformation extends Component {
             </div>
 
             <div className="col-lg-9 col-12 mt-5 mt-lg-0 d-flex flex-column gap-2 bg-light rounded-4 fw9-input-amount">
-              <h4>Personal Information</h4>
-              <p>We got your personal information from the sign up proccess. If you want to make changes on your information, contact our support.</p>
-              <div>
-                <div className="flex flex-column bg-light container">
-                  <h5 className="key">First Name</h5>
-                  <h2 className="value">Robert</h2>
-                </div>
-                <div className="flex flex-column bg-light container">
-                  <h5 className="key">Last Name</h5>
-                  <h2 className="value">Chandler</h2>
-                </div>
-                <div className="flex flex-column bg-light container">
-                  <h5 className="key">Verified E-mail</h5>
-                  <h2 className="value">pewdiepie1@gmail.com</h2>
-                </div>
-                <div className="d-flex flex-column flex-lg-row justify-content-between bg-light container">
-                  <div>
-                    <h5 className="key">Phone Number</h5>
-                    <h2 className="value">+62 813-9387-7946</h2>
+              <h4>Change PIN</h4>
+              <p>Enter your current 6 digits Zwallet PIN below to continue to the next steps.</p>
+              <div className="mx-auto">
+                <div className="d-flex justify-content-center gap-3 fw9-input my-5">
+                  <div className="square">
+                    <input type="text" className="rounded-3 text-center fs-1" />
                   </div>
-                  <Link to="/manage-phone-number">Manage</Link>
+                  <div className="square">
+                    <input type="text" className="rounded-3 text-center fs-1" />
+                  </div>
+                  <div className="square">
+                    <input type="text" className="rounded-3 text-center fs-1" />
+                  </div>
+                  <div className="square">
+                    <input type="text" className="rounded-3 text-center fs-1" />
+                  </div>
+                  <div className="square">
+                    <input type="text" className="rounded-3 text-center fs-1" />
+                  </div>
+                  <div className="square">
+                    <input type="text" className="rounded-3 text-center fs-1" />
+                  </div>
                 </div>
+                <Link to="/profile" className="d-grid gap-2">
+                  <button className="btn btn-primary" type="button">
+                    Continue
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </main>
-
         <Footer />
-      </>
+      </div>
     );
   }
 }
 
-export default PersonalInformation;
+export default ChangePin;

@@ -92,7 +92,7 @@ export class Dashboard extends Component {
                   <h1 className="text-light">Rp120.000</h1>
                   <p className="text-light">+62 813-9387-7946</p>
                 </div>
-                <div className="d-flex flex-column gap-3">
+                <div className="d-flex flex-column">
                   <button type="button" className="btn btn-outline-secondary fw9-transaction">
                     <i data-feather="arrow-up" className="fw9-menu"></i> Transfer
                   </button>

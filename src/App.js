@@ -19,6 +19,10 @@ import ResetPassword from './pages/ResetPassword';
 import Profile from './pages/Profile';
 import PersonalInformation from './pages/PersonalInformation';
 import PrivateRoute from './component/PrivateRoute';
+import ManagePhoneNumber from './pages/ManagePhoneNumber';
+import AddPhoneNumber from './pages/AddPhoneNumber';
+import ChangePassword from './pages/ChangePassword';
+import ChangePin from './pages/ChangePin';
 
 export class App extends Component {
   render() {
@@ -35,19 +39,128 @@ export class App extends Component {
             </PrivateRoute>
           }
         />
-        <Route path="search-receiver" element={<SearchReceiver />} />
-        <Route path="input-amount" element={<InputAmount />} />
-        <Route path="confirmation" element={<Confirmation />} />
-        <Route path="status-success" element={<StatusSuccess />} />
+        <Route
+          path="search-receiver"
+          element={
+            <PrivateRoute>
+              <SearchReceiver />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="input-amount"
+          element={
+            <PrivateRoute>
+              <InputAmount />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="confirmation"
+          element={
+            <PrivateRoute>
+              <Confirmation />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="status-success"
+          element={
+            <PrivateRoute>
+              <StatusSuccess />
+            </PrivateRoute>
+          }
+        />
         <Route path="counter" element={<Count />} />
         <Route path="sign-up" element={<SignUp />} />
-        <Route path="create-pin" element={<CreatePin />} />
-        <Route path="create-pin-success" element={<CreatePinSuccess />} />
-        <Route path="top-up" element={<TopUp />} />
-        <Route path="confirm-email" element={<ConfirmEmail />} />
-        <Route path="reset-password" element={<ResetPassword />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="personal-information" element={<PersonalInformation />} />
+        <Route
+          path="create-pin"
+          element={
+            <PrivateRoute>
+              <CreatePin />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="create-pin-success"
+          element={
+            <PrivateRoute>
+              <CreatePinSuccess />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="top-up"
+          element={
+            <PrivateRoute>
+              <TopUp />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="confirm-email"
+          element={
+            <PrivateRoute>
+              <ConfirmEmail />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="reset-password"
+          element={
+            <PrivateRoute>
+              <ResetPassword />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="personal-information"
+          element={
+            <PrivateRoute>
+              <PersonalInformation />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="manage-phone-number"
+          element={
+            <PrivateRoute>
+              <ManagePhoneNumber />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="add-phone-number"
+          element={
+            <PrivateRoute>
+              <AddPhoneNumber />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="change-password"
+          element={
+            <PrivateRoute>
+              <ChangePassword />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="change-pin"
+          element={
+            <PrivateRoute>
+              <ChangePin />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     );
   }
