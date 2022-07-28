@@ -4,6 +4,7 @@ import Dropdown from '../component/Dropdown';
 import Footer from '../component/Footer';
 import '../asset/css/add-phone-number.css';
 import { Link } from 'react-router-dom';
+import FormPhone from '../component/FormPhone';
 
 export class AddPhoneNumber extends Component {
   render() {
@@ -45,7 +46,9 @@ export class AddPhoneNumber extends Component {
               <h4>Add Phone Number</h4>
               <p>Add at least one phone number for the transfer ID so you can start transfering your money to another user.</p>
               <div className="mx-auto">
-                <div className="col-auto my-5">
+                <FormPhone />
+
+                {/* <div className="col-auto my-5">
                   <label className="visually-hidden" htmlFor="autoSizingInputGroup">
                     Email
                   </label>
@@ -58,7 +61,7 @@ export class AddPhoneNumber extends Component {
                   <button className="btn btn-primary" type="button">
                     Continue
                   </button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
