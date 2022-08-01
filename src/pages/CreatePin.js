@@ -34,7 +34,7 @@ export class CreatePin extends Component {
             </div>
           </div>
 
-          <div class="d-grid fw-button rounded">
+          <div class="d-grid fw-button create rounded">
             <Link to="/create-pin-success" class="btn text-light fw-bold" type="button">
               Confirm
             </Link>

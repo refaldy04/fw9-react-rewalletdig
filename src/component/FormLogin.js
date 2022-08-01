@@ -2,37 +2,53 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { useNavigate, Link /*useLocation*/ } from 'react-router-dom';
-// import { Alert } from 'bootstrap';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Alert from 'react-bootstrap/Alert';
+import React from 'react';
+
+import { login } from '../redux/asyncActions/user';
 
 const loginSchema = Yup.object().shape({
   email: Yup.string().email('invalid email format wkwkwk').required('Required'),
   password: Yup.string().min(4).required('Required'),
 });
 
-const onLogin = () => {
-  localStorage.setItem('auth', 'random-token');
-};
+const AuthForm = ({ errors, handleSubmit, handleChange, values }) => {
+  const successMsg = useSelector((state) => state.user.successMsg);
+  const errorMsg = useSelector((state) => state.user.errorMsg);
+  // const dispatch = useDispatch();
+  // const data = useSelector((state) => state.user.token);
+  // React.useEffect(() => {
+  //   dispatch(getUser());
+  // }, []);
 
-const AuthForm = ({ errors, handleSubmit, handleChange }) => {
-  // const location = useLocation();
+  // React.useEffect(() => {
+  //   console.log(data);
+  // }, [data]);
+  // const token = useSelector((state) => state.auth.token);
+  const location = useLocation();
   return (
     <Form noValidate onSubmit={handleSubmit}>
-      {/* {location.state?.errMsg && (
+      {location.state?.errMsg && (
         <div>
-          <Alert variant="danger">{location.state.errMsg}</Alert>
+          <Alert className="text-center" variant="danger">
+            {location.state.errMsg}
+          </Alert>
         </div>
-      )} */}
+      )}
+      {successMsg && <Alert variant="success">{successMsg}</Alert>}
+      {errorMsg && <Alert variant="danger">{errorMsg}</Alert>}
       <Form.Group className="mb-3" controlId="formBasicEmail">
         {/* <Form.Label>Email address</Form.Label> */}
-        <Form.Control name="email" type="email" onChange={handleChange} placeholder="Enter email" isInvalid={!!errors.email} />
+        <Form.Control name="email" type="email" value={values.email} onChange={handleChange} placeholder="Enter email" isInvalid={!!errors.email} />
         <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
         {/* <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text> */}
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         {/* <Form.Label>Password</Form.Label> */}
-        <Form.Control name="password" type="password" onChange={handleChange} placeholder="Password" isInvalid={!!errors.password} />
+        <Form.Control name="password" type="password" value={values.password} onChange={handleChange} placeholder="Password" isInvalid={!!errors.password} />
         <Form.Control.Feedback type="invalid">{errors.password}</Form.Control.Feedback>
       </Form.Group>
       {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -43,7 +59,7 @@ const AuthForm = ({ errors, handleSubmit, handleChange }) => {
         <Link to="/confirm-email">Forgot password?</Link>
       </p>
       <div className="d-grid">
-        <Button variant="primary" type="submit" onClick={onLogin} className="fw-login-btn text-light">
+        <Button variant="primary" type="submit" className="fw-login-btn text-light">
           Login
         </Button>
       </div>
@@ -52,15 +68,30 @@ const AuthForm = ({ errors, handleSubmit, handleChange }) => {
 };
 
 function FormInput() {
+  const dispatch = useDispatch();
+  const token = useSelector((state) => state.user.token);
   const navigate = useNavigate();
 
-  function handleClick() {
-    navigate('/dashboard');
-  }
+  const onLogin = (value) => {
+    const data = { email: value.email, password: value.password };
+    console.log(data);
+    dispatch(login(data));
+    //
+  };
+
+  React.useEffect(() => {
+    if (token) {
+      navigate('/dashboard');
+    }
+  }, [navigate, token]);
+
   return (
-    <Formik initialValues={{ email: '', password: '' }} onSubmit={handleClick} validationSchema={loginSchema}>
+    <Formik onSubmit={onLogin} initialValues={{ email: '', password: '' }} validationSchema={loginSchema}>
       {(props) => <AuthForm {...props} />}
     </Formik>
+    // <Formik initialValues={{ email: '', password: '' }} onSubmit={handleClick} validationSchema={loginSchema}>
+    //   {(props) => <AuthForm {...props} />}
+    // </Formik>
   );
 }
 

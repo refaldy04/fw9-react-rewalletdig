@@ -38,9 +38,9 @@ section {
   text-align: center;
 }
 
-.fw-button {
+.fw-button .create {
   margin-top: 90px;
-  background-color: #dadada;
+  background-color: #06283d;
 }
 
 .fw-login-btn {

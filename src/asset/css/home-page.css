@@ -39,9 +39,10 @@ main {
 }
 
 .fw9-menu-list {
-  padding: 50px 35px;
+  padding: 50px 35px !important;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
   border-radius: 25px;
+  max-height: 100%;
 }
 
 .fw9-menu-list a {
@@ -86,6 +87,8 @@ main {
 .fw9-diagram {
   padding: 44px 35px;
   background-color: #ffffff;
+  height: 100%;
+  margin-bottom: unset;
 }
 
 .fw9-history {

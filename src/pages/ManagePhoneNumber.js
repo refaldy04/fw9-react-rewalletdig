@@ -16,7 +16,7 @@ export class ManagePhoneNumber extends Component {
           <Dropdown />
 
           <div className="d-flex gap-3">
-            <div className="col-lg-3 flex-column justify-content-between bg-light fw9-menu-list d-none d-lg-flex">
+            <div className="col-lg-3 flex-column justify-content-between bg-light fw9-menu-list phone d-none d-lg-flex">
               <div className="d-flex flex-column gap-5">
                 <Link to="/dashboard" className="d-flex gap-4 fw9-semibold">
                   <i data-feather="grid" className="fw9-menu"></i>

@@ -57,9 +57,9 @@ body {
   box-shadow: unset;
 }
 
-.fw-button {
+.fw-button .login {
   margin-top: 90px;
-  background-color: #dadada;
+  background-color: #06283d;
 }
 
 .fw-forgot-pw a {

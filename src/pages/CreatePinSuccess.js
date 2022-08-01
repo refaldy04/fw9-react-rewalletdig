@@ -18,8 +18,8 @@ export class CreatePinSuccess extends Component {
           <h3 class="fw-bold fs-5">Your PIN Was Successfully Created</h3>
           <p>Your PIN was successfully created and you can now access all the features in Zwallet. Login to your new account and start exploring!</p>
 
-          <div class="d-grid fw-button rounded">
-            <Link to="/dashboard" class="btn text-light fw-bold" type="button">
+          <div class="d-grid fw-button pin rounded">
+            <Link to="/login" class="btn text-light fw-bold" type="button">
               Login Now
             </Link>
           </div>

@@ -46,9 +46,20 @@ section {
   box-shadow: unset;
 }
 
-.fw-button {
+.form-control.is-invalid:focus {
+  border-color: unset;
+}
+
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: unset !important;
+  color: fieldtext !important;
+}
+
+.fw-button .sign {
   margin-top: 90px;
-  background-color: #dadada;
+  background-color: #06283d;
 }
 
 .fw-forgot-pw a {

@@ -35,7 +35,7 @@ export class ResetPassword extends Component {
             </div>
           </div>
 
-          <div className="d-grid fw-button rounded mb-5">
+          <div className="d-grid fw-button reset rounded mb-5">
             <Link to="/login" className="btn text-light fw-bold" type="button">
               Reset Password
             </Link>

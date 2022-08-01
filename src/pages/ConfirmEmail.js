@@ -24,7 +24,7 @@ export class ConfirmEmail extends Component {
             </div>
           </div>
 
-          <div className="d-grid fw-button rounded mb-5">
+          <div className="d-grid fw-button reset rounded mb-5">
             <Link to="/reset-password" className="btn text-light fw-bold" type="button">
               Confirm
             </Link>

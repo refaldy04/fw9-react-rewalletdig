@@ -38,7 +38,7 @@ main {
   background-color: #6379f4;
 }
 
-.fw9-menu-list {
+.fw9-menu-list .phone {
   padding: 50px 35px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
   border-radius: 25px;
