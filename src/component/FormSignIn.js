@@ -1,11 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import * as Yup from 'yup';
-import axios from 'axios';
 import { Formik } from 'formik';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { register } from '../redux/asyncActions/user';
 import Alert from 'react-bootstrap/Alert';
 
@@ -22,7 +21,7 @@ const AuthForm = ({ errors, handleSubmit, handleChange, values }) => {
 
   React.useEffect(() => {
     if (successMsg) {
-      navigate('/login', { state: { successMsg } });
+      navigate('/create-pin', { state: { successMsg } });
     }
   }, [navigate, successMsg]);
 
