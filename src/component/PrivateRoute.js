@@ -13,6 +13,7 @@ import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
+  console.log(children);
   const token = useSelector((state) => state.user.token);
   if (token) {
     return children;

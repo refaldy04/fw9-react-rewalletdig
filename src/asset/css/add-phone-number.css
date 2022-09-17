@@ -124,6 +124,10 @@ main {
   margin-top: 50px;
 }
 
+.form-phone {
+  width: 432px;
+}
+
 .btn:hover {
   background-color: #adadad;
   border-color: #dadada;
@@ -156,5 +160,9 @@ footer p {
 
   footer {
     padding: 30px;
+  }
+
+  .form-phone {
+    width: 70vw;
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../asset/css/landing-page-2.css';
 import { Link } from 'react-router-dom';
+import { IconContext } from 'react-icons';
 
 import phone2 from '../asset/img/png-phone-2.png';
 import google from '../asset/img/Group.png';
@@ -75,24 +76,39 @@ export class Home extends Component {
           <div>
             <div className="container">
               <div className="icon">
-                <FiPhone />
+                <IconContext.Provider value={{ size: '1.5rem' }}>
+                  <div>
+                    <FiPhone />
+                  </div>
+                </IconContext.Provider>
               </div>
+
               <h3>24/7 Support</h3>
               <p>We have 24/7 contact support so you can contact us whenever you want and we will respond it.</p>
             </div>
             <div className="container main">
               <div className="icon">
-                <FiLock />
+                <IconContext.Provider value={{ size: '1.5rem' }}>
+                  <div>
+                    <FiLock />
+                  </div>
+                </IconContext.Provider>
               </div>
+
               <h3>Data Privacy</h3>
               <p>We make sure your data is safe in our database and we will encrypt any data you submitted to us.</p>
             </div>
             <div className="container">
               <div className="icon">
-                <FiDownload />
+                <IconContext.Provider value={{ size: '1.5rem' }}>
+                  <div>
+                    <FiDownload />
+                  </div>
+                </IconContext.Provider>
               </div>
+
               <h3>Easy Download</h3>
-              <p>Zwallet is 100% totally free to use it’s now available on Google Play Store and App Store.</p>
+              <p>Zwallet is 100% totally free to use it's now available on Google Play Store and App Store.</p>
             </div>
           </div>
         </section>

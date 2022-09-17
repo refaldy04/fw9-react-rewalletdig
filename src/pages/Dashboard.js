@@ -135,7 +135,7 @@ export const Dashboard = () => {
               <div>
                 <h5 className="text-light">Balance</h5>
                 <h1 className="text-light">Rp {profile?.balance}</h1>
-                <p className="text-light">+62 813-9387-7946</p>
+                <p className="text-light">{profile?.phone_number}</p>
               </div>
               <div className="d-flex flex-column">
                 <button type="button" className="btn btn-outline-secondary fw9-transaction">

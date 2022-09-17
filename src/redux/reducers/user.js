@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { login, register } from '../asyncActions/user';
+// import { useNavigate } from 'react-router-dom';
 
 const initialState = {
   token: localStorage.getItem('token') || null,
@@ -38,8 +39,10 @@ const auth = createSlice({
       state.successMsg = null;
     });
     build.addCase(register.fulfilled, (state, action) => {
+      // let navigate = useNavigate();
       state.errorMsg = action.payload?.errorMsg;
       state.successMsg = action.payload?.successMsg;
+      // navigate('/create-pin');
     });
   },
 });

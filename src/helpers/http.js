@@ -7,7 +7,7 @@ const http = (token) => {
   }
   return axios.create({
     headers,
-    baseURL: 'http://localhost:3333',
+    baseURL: 'https://fw9-backend-rewallet.vercel.app/',
   });
 };
 

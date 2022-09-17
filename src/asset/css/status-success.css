@@ -145,11 +145,11 @@ main {
 }
 
 .fw9-submit-btn.grey {
-  background-color: rgba(99, 121, 244, 0.15);
+  background-color: #06283d;
 }
 
 .fw9-submit-btn.grey:focus {
-  background-color: rgba(99, 121, 244, 0.15);
+  background-color: #06283d;
 }
 
 .fw9-modal {

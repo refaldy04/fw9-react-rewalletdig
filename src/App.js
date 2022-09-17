@@ -73,22 +73,8 @@ export class App extends Component {
         />
         <Route path="counter" element={<Count />} />
         <Route path="sign-up" element={<SignUp />} />
-        <Route
-          path="create-pin"
-          element={
-            <PrivateRoute>
-              <CreatePin />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="create-pin-success"
-          element={
-            <PrivateRoute>
-              <CreatePinSuccess />
-            </PrivateRoute>
-          }
-        />
+        <Route path="create-pin" element={<CreatePin />} />
+        <Route path="create-pin-success" element={<CreatePinSuccess />} />
         <Route
           path="top-up"
           element={
@@ -97,22 +83,8 @@ export class App extends Component {
             </PrivateRoute>
           }
         />
-        <Route
-          path="confirm-email"
-          element={
-            <PrivateRoute>
-              <ConfirmEmail />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="reset-password"
-          element={
-            <PrivateRoute>
-              <ResetPassword />
-            </PrivateRoute>
-          }
-        />
+        <Route path="confirm-email" element={<ConfirmEmail />} />
+        <Route path="reset-password" element={<ResetPassword />} />
         <Route
           path="profile"
           element={

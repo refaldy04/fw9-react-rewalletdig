@@ -14,7 +14,7 @@ const phoneSchema = Yup.object().shape({
 const AuthForm = ({ errors, handleSubmit, handleChange }) => {
   // const location = useLocation();
   return (
-    <Form className="mt-5" noValidate onSubmit={handleSubmit}>
+    <Form className="mt-5 form-phone" noValidate onSubmit={handleSubmit}>
       {/* {location.state?.errMsg && (
           <div>
             <Alert variant="danger">{location.state.errMsg}</Alert>
@@ -31,7 +31,7 @@ const AuthForm = ({ errors, handleSubmit, handleChange }) => {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group> */}
       {/* <HomeButton /> */}
-      <div className="d-grid gap-2 my-5">
+      <div className="d-grid gap-2 my-5 ">
         <Button className="btn btn-primary" type="submit">
           Continue
         </Button>
