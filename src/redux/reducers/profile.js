@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getProfile, getAllProfile } from '../asyncActions/profile';
 import { transfer } from '../asyncActions/transfer';
-
+import { topup } from '../asyncActions/topup';
 const initialState = {
   data: {},
   users: [],
@@ -34,17 +34,10 @@ const profile = createSlice({
       console.log('ini dari reducers', action.payload[0].balance);
       state.data.balance = action.payload[0].balance;
     });
-
-    // build.addCase(login.fulfilled, (state, action) => {
-    //   const token = action.payload?.token;
-    //   if (token) {
-    //     state.token = token;
-    //     localStorage.setItem('token', token);
-    //   } else {
-    //     state.errorMsg = action.payload?.errorMsg;
-    //     state.successMsg = action.payload?.successMsg;
-    //   }
-    // });
+    build.addCase(topup.fulfilled, (state, action) => {
+      console.log('ini dari reducers', action.payload.balance);
+      state.data.balance = action.payload.balance;
+    });
   },
 });
 
