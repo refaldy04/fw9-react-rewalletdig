@@ -85,7 +85,6 @@ export const Dashboard = () => {
   const navigate = useNavigate();
   const token = useSelector((state) => state.user.token);
   const profile = useSelector((state) => state.profile.data);
-  console.log(profile);
 
   const onLogout = () => {
     dispatch(logout());

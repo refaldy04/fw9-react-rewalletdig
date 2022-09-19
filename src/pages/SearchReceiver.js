@@ -6,41 +6,41 @@ import { useNavigate } from 'react-router-dom';
 import { logout } from '../redux/reducers/user';
 import { getAllProfile } from '../redux/asyncActions/profile';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectUser } from '../redux/reducers/transfer';
 
 import profile from '../asset/img/robert.png';
-import samuel from '../asset/img/David.png';
-import mellisa from '../asset/img/2.png';
-import jessica from '../asset/img/1.png';
-import michael from '../asset/img/Rectangle-25.png';
 
 // import { FiSearch } from 'react-icons/fi';
 
 const User = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = useSelector((state) => state.user.token);
   const profileData = useSelector((state) => state.profile.users);
   console.log(profileData);
   const hallo = profileData?.map((user) => (
-    <Link to="/input-amount" className="d-flex align-items- justify-content-between flex-column flex-xl-row">
+    <div
+      onClick={() => {
+        dispatch(selectUser(user.id));
+        navigate('/input-amount');
+      }}
+      key={user.id}
+      className="d-flex align-items- justify-content-between flex-column flex-xl-row"
+    >
       <div className="d-flex align-items-start gap-2 user text-dark">
-        <img src={samuel} alt="Samuel" className="img-fluid" />
+        <img src="/default-profile-pic.jpg" alt="Samuel" className="img-fluid profile-pic rounded" />
         <div className="d-flex flex-column justify-content-between">
           <h5 className="name-history">{user.fullname}</h5>
           <p className="type-history">{user.phone_number}</p>
         </div>
       </div>
-    </Link>
+    </div>
   ));
 
   React.useEffect(() => {
     dispatch(getAllProfile(token));
   }, []);
-  return (
-    <>
-      {/* <span>123</span> */}
-      {hallo}
-    </>
-  );
+  return <>{hallo}</>;
 };
 
 export const SearchReceiver = () => {

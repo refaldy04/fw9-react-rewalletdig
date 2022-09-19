@@ -23,6 +23,7 @@ import ManagePhoneNumber from './pages/ManagePhoneNumber';
 import AddPhoneNumber from './pages/AddPhoneNumber';
 import ChangePassword from './pages/ChangePassword';
 import ChangePin from './pages/ChangePin';
+import StatusFailed from './pages/StatusFailed';
 
 export class App extends Component {
   render() {
@@ -36,6 +37,14 @@ export class App extends Component {
           element={
             <PrivateRoute>
               <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="status-failed"
+          element={
+            <PrivateRoute>
+              <StatusFailed />
             </PrivateRoute>
           }
         />

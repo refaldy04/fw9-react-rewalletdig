@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getProfile, getAllProfile } from '../asyncActions/profile';
+import { transfer } from '../asyncActions/transfer';
 
 const initialState = {
   data: {},
@@ -26,7 +27,12 @@ const profile = createSlice({
       if (users) {
         state.users = users;
       }
-      console.log(action.payload.result);
+      console.log('ini users dari profile reducers', users);
+    });
+
+    build.addCase(transfer.fulfilled, (state, action) => {
+      console.log('ini dari reducers', action.payload[0].balance);
+      state.data.balance = action.payload[0].balance;
     });
 
     // build.addCase(login.fulfilled, (state, action) => {

@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import '../asset/css/status-success.css';
 import { Link } from 'react-router-dom';
-
 import profile from '../asset/img/robert.png';
-import check from '../asset/img/check.png';
+import check from '../asset/img/x.png';
 
-import { IconContext } from 'react-icons';
-import { FiDownload, FiShare2 } from 'react-icons/fi';
-export class StatusSuccess extends Component {
+export class StatusFailed extends Component {
   render() {
     return (
       <>
@@ -95,7 +92,7 @@ export class StatusSuccess extends Component {
                 <img src={check} alt="check" />
               </div>
 
-              <p className="fw9-text-status mx-auto">Transfer Success</p>
+              <p className="fw9-text-status mx-auto">Transfer Failed</p>
 
               <div className="d-flex align-items-start gap-2 fw9-detail">
                 <div className="d-flex flex-column justify-content-between">
@@ -134,16 +131,8 @@ export class StatusSuccess extends Component {
               </div>
 
               <div className="d-flex flex-column flex-xl-row justify-content-end gap-3 mt-5">
-                <button type="button" className="btn fw9-submit-btn grey fw-bold text-light">
-                  <IconContext.Provider value={{ size: '2em', color: 'gray' }}>
-                    <FiShare2 />
-                  </IconContext.Provider>
-                </button>
-                <button type="button" className="btn fw9-submit-btn grey justify-content-center fw-bold fw9-primary-clr d-flex align-items-center">
-                  {<FiDownload />} Download PDF
-                </button>
-                <Link to="/dashboard" type="button" className="btn fw9-submit-btn justify-content-center fw-bold text-light d-flex align-items-center">
-                  Continue
+                <Link to="/confirmation" type="button" className="btn fw9-submit-btn fw-bold justify-content-center text-light d-flex align-items-center">
+                  Try Again
                 </Link>
               </div>
             </div>
@@ -162,4 +151,4 @@ export class StatusSuccess extends Component {
   }
 }
 
-export default StatusSuccess;
+export default StatusFailed;

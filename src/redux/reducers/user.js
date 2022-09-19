@@ -14,7 +14,7 @@ const auth = createSlice({
   initialState,
   reducers: {
     logout: (state) => {
-      localStorage.removeItem('token');
+      // localStorage.removeItem('token');
       return initialState;
     },
   },
@@ -24,10 +24,15 @@ const auth = createSlice({
       state.successMsg = null;
     });
     build.addCase(login.fulfilled, (state, action) => {
+      console.log('ini dari redicers user', action.payload);
       const token = action.payload?.token;
+      const pin = action.payload?.pin;
+      const email = action.payload?.email;
       if (token) {
         state.token = token;
-        localStorage.setItem('token', token);
+        state.pin = pin;
+        state.email = email;
+        // localStorage.setItem('token', token);
       } else {
         state.errorMsg = action.payload?.errorMsg;
         state.successMsg = action.payload?.successMsg;

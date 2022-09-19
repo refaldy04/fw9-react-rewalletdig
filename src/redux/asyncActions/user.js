@@ -13,6 +13,9 @@ export const login = createAsyncThunk('auth/login', async (request) => {
     });
     console.log(data);
     result.token = data.result.token;
+    result.pin = data.result.pin;
+    result.email = data.result.email;
+    console.log('ini dari data login', result);
     return result;
   } catch (e) {
     result.errorMsg = e.response.data.message;
