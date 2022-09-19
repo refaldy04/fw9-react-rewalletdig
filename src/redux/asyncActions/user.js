@@ -39,3 +39,23 @@ export const register = createAsyncThunk('auth/register', async (request) => {
     return result;
   }
 });
+
+export const createPin = createAsyncThunk('auth/create-pin', async (request) => {
+  const result = {};
+  try {
+    console.log('ini dari create PIN', request);
+    const send = qs.stringify(request);
+    console.log('ini dari create PIN', send);
+    const { data } = await http().post('/auth/createPin', send, {
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+    });
+    console.log('ini dari create PIN', data);
+    return data;
+  } catch (e) {
+    console.log('create pin gagal');
+    result.errorMsg = e.response.data.message;
+    return result;
+  }
+});

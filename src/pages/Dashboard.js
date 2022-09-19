@@ -85,6 +85,7 @@ export const Dashboard = () => {
   const navigate = useNavigate();
   const token = useSelector((state) => state.user.token);
   const profile = useSelector((state) => state.profile.data);
+  const pin = useSelector((state) => state.user.pin);
 
   const onLogout = () => {
     dispatch(logout());
@@ -92,7 +93,12 @@ export const Dashboard = () => {
   };
 
   React.useEffect(() => {
-    dispatch(getProfile(token));
+    if (pin) {
+      console.log('ini data user', profile);
+      dispatch(getProfile(token));
+    } else {
+      navigate('/create-pin');
+    }
   }, []);
 
   return (

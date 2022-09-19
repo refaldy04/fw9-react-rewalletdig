@@ -1,48 +1,68 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import '../asset/css/create-pin.css';
 import Intro from '../component/Intro';
+import { useDispatch, useSelector } from 'react-redux';
+import { createPin } from '../redux/asyncActions/user';
+import { useNavigate } from 'react-router-dom';
 
-export class CreatePin extends Component {
-  render() {
-    return (
-      <section class="row">
-        <Intro />
+export const CreatePin = () => {
+  const [form, setForm] = useState({ first: '', sec: '', third: '', fourth: '', fifth: '', sixth: '' });
 
-        <div class="col-md-5 fw-form d-flex flex-column fw-create-pin">
-          <h3 class="fw-motto fw-margin">Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h3>
-          <p class="fw-accessibility mt-4">Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
+  const email = useSelector((state) => state.user.email);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-          <div className="d-flex justify-content-center gap-3 fw9-input my-5">
-            <div className="square">
-              <input type="text" className="rounded-3 text-center fs-1" />
-            </div>
-            <div className="square">
-              <input type="text" className="rounded-3 text-center fs-1" />
-            </div>
-            <div className="square">
-              <input type="text" className="rounded-3 text-center fs-1" />
-            </div>
-            <div className="square">
-              <input type="text" className="rounded-3 text-center fs-1" />
-            </div>
-            <div className="square">
-              <input type="text" className="rounded-3 text-center fs-1" />
-            </div>
-            <div className="square">
-              <input type="text" className="rounded-3 text-center fs-1" />
-            </div>
+  const handleChangeText = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const pin = { pin: Object.values(form).join('') };
+  const formPin = {
+    pin: pin.pin,
+    email,
+  };
+
+  const onCreatePin = () => {
+    dispatch(createPin(formPin));
+    navigate('/dashboard');
+  };
+  return (
+    <section class="row">
+      <Intro />
+
+      <div className="col-md-5 fw-form d-flex flex-column fw-create-pin">
+        <h3 className="fw-motto fw-margin">Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h3>
+        <p className="fw-accessibility mt-4">Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
+
+        <div className="d-flex justify-content-center fw9-input my-5">
+          <div className="square">
+            <input type="text" className="rounded-3 text-center fs-1" name="first" onChange={handleChangeText} />
           </div>
-
-          <div class="d-grid fw-button create rounded">
-            <Link to="/create-pin-success" class="btn text-light fw-bold" type="button">
-              Confirm
-            </Link>
+          <div className="square">
+            <input type="text" className="rounded-3 text-center fs-1" name="sec" onChange={handleChangeText} />
+          </div>
+          <div className="square">
+            <input type="text" className="rounded-3 text-center fs-1" name="third" onChange={handleChangeText} />
+          </div>
+          <div className="square">
+            <input type="text" className="rounded-3 text-center fs-1" name="fourth" onChange={handleChangeText} />
+          </div>
+          <div className="square">
+            <input type="text" className="rounded-3 text-center fs-1" name="fifth" onChange={handleChangeText} />
+          </div>
+          <div className="square">
+            <input type="text" className="rounded-3 text-center fs-1" name="sixth" onChange={handleChangeText} />
           </div>
         </div>
-      </section>
-    );
-  }
-}
+
+        <div class="d-grid fw-button create rounded">
+          <button onClick={onCreatePin} class="btn text-light fw-bold" type="button">
+            Confirm
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default CreatePin;
