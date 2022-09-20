@@ -27,10 +27,12 @@ const auth = createSlice({
       const token = action.payload?.token;
       const pin = action.payload?.pin;
       const email = action.payload?.email;
+      const username = action.payload?.username;
       if (token) {
         state.token = token;
         state.pin = pin;
         state.email = email;
+        state.username = username;
         // localStorage.setItem('token', token);
       } else {
         state.errorMsg = action.payload?.errorMsg;

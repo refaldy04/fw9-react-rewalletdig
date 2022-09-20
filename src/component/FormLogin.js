@@ -89,9 +89,6 @@ function FormInput() {
     <Formik onSubmit={onLogin} initialValues={{ email: '', password: '' }} validationSchema={loginSchema}>
       {(props) => <AuthForm {...props} />}
     </Formik>
-    // <Formik initialValues={{ email: '', password: '' }} onSubmit={handleClick} validationSchema={loginSchema}>
-    //   {(props) => <AuthForm {...props} />}
-    // </Formik>
   );
 }
 

@@ -11,17 +11,14 @@ export const login = createAsyncThunk('auth/login', async (request) => {
         'content-type': 'application/x-www-form-urlencoded',
       },
     });
-    console.log(data);
-    if (data.result.token) {
-      result.token = data.result.token;
-      result.pin = data.result.pin;
-      result.email = data.result.email;
-      console.log('ini dari data login', result);
-      return result;
-    } else {
-      result.message = data.message;
-      console.log('ini error handling login', result);
-    }
+    console.log('ini data dari backend waktu login', data);
+
+    result.token = data.result.token;
+    result.pin = data.result.pin;
+    result.email = data.result.email;
+    result.username = data.result.username;
+    console.log('ini dari data login', result);
+    return result;
   } catch (e) {
     result.errorMsg = e.response.data.message;
     return result;
