@@ -95,7 +95,7 @@ export class Profile extends Component {
                   </div>
                   <div className="mt-4 d-flex flex-column gap-5">
                     <div className="d-flex justify-content-start align-items-start gap-2 fw9-user">
-                      <img src={Samuel} alt="pict profile" class="img-fluid" />
+                      <img src={Samuel} alt="pict profile" className="img-fluid" />
                       <div>
                         <p className="name">Samuel Suhi</p>
                         <p className="phone">+62 8371-1010-2732</p>

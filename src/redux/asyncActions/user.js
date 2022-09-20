@@ -12,11 +12,16 @@ export const login = createAsyncThunk('auth/login', async (request) => {
       },
     });
     console.log(data);
-    result.token = data.result.token;
-    result.pin = data.result.pin;
-    result.email = data.result.email;
-    console.log('ini dari data login', result);
-    return result;
+    if (data.result.token) {
+      result.token = data.result.token;
+      result.pin = data.result.pin;
+      result.email = data.result.email;
+      console.log('ini dari data login', result);
+      return result;
+    } else {
+      result.message = data.message;
+      console.log('ini error handling login', result);
+    }
   } catch (e) {
     result.errorMsg = e.response.data.message;
     return result;
