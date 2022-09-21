@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../asset/css/search-receiver.css';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
@@ -7,17 +7,19 @@ import { logout } from '../redux/reducers/user';
 import { getAllProfile } from '../redux/asyncActions/profile';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../redux/reducers/transfer';
-
-import profile from '../asset/img/robert.png';
-
-// import { FiSearch } from 'react-icons/fi';
+import Navbar from '../component/Navbar';
+import { IconContext } from 'react-icons';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { FiSearch } from 'react-icons/fi';
 
 const User = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = useSelector((state) => state.user.token);
   const profileData = useSelector((state) => state.profile.users);
-  console.log(profileData);
+  const data = {
+    token,
+  };
   const hallo = profileData?.map((user) => (
     <div
       onClick={() => {
@@ -38,14 +40,27 @@ const User = () => {
   ));
 
   React.useEffect(() => {
-    dispatch(getAllProfile(token));
+    dispatch(getAllProfile(data));
   }, []);
   return <>{hallo}</>;
 };
 
 export const SearchReceiver = () => {
+  const [keyword, setKeyword] = useState({ search: '' });
+
+  const token = useSelector((state) => state.user.token);
+
+  const handleChangeText = (e) => {
+    setKeyword({ ...keyword, [e.target.name]: e.target.value });
+  };
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const data = {
+    search: keyword.search,
+    token,
+  };
 
   const onLogout = () => {
     dispatch(logout());
@@ -54,21 +69,7 @@ export const SearchReceiver = () => {
 
   return (
     <>
-      <nav className="fw9-navbar">
-        <div className="row d-flex justify-content-between container">
-          <h1 className="fw9-brand col-lg-6 mb-5 mb-lg-0">RE-WALLET</h1>
-          <div className="d-flex gap-3 align-items-start col-lg-6 justify-content-lg-end">
-            <img src={profile} className="img-fluid fw9-profile-pict" alt="profile" />
-            <div className="d-flex flex-column justify-content-end">
-              <h4 className="fw9-name-user d-flex">Robert Chandler</h4>
-              <p>+62 8139 3877 7946</p>
-            </div>
-            <div className="d-flex fw9-bell">
-              <i data-feather="bell"></i>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
       <main>
         <div className="dropdown d-lg-none d-block">
           <button className="fw9-btn-menu text-light btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -135,12 +136,16 @@ export const SearchReceiver = () => {
           <div className="col-lg-9 col-12 mt-5 mt-lg-0 d-flex flex-column gap-4 bg-light rounded-4 fw9-search-receiver">
             <p>Search Receiver</p>
             <Form className="mb-5">
-              <Form.Group>
-                {/* <span className="input-group-text fw9-input-search" id="addon-wrapping">
-                    <FiSearch />
-                  </span> */}
-                <Form.Control type="text" className=" fw9-input-search" placeholder="Search receiver here" aria-label="Username" aria-describedby="addon-wrapping" />
-              </Form.Group>
+              <InputGroup>
+                <InputGroup.Text id="basic-addon2" onClick={() => dispatch(getAllProfile(data))}>
+                  <IconContext.Provider value={{ size: '1.5rem' }}>
+                    <div>
+                      <FiSearch />
+                    </div>
+                  </IconContext.Provider>
+                </InputGroup.Text>
+                <Form.Control type="text" name="search" className="fw9-input-search" placeholder="Search receiver here" aria-label="Username" aria-describedby="addon-wrapping" onChange={handleChangeText} />
+              </InputGroup>
             </Form>
 
             <div className="d-flex flex-column gap-5 mt-4 mt-xl-0">

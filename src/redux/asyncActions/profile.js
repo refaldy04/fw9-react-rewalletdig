@@ -13,10 +13,10 @@ export const getProfile = createAsyncThunk('profile/getData', async (token) => {
   }
 });
 
-export const getAllProfile = createAsyncThunk('profile/getAllData', async (token) => {
+export const getAllProfile = createAsyncThunk('profile/getAllData', async (send) => {
   const result = {};
   try {
-    const { data } = await http(token).get('/admin/profile');
+    const { data } = await http(send.token).get(`/allProfile?search=${send.search || ''}`);
     console.log('ini data getAllProfile', data);
     return data;
   } catch (e) {

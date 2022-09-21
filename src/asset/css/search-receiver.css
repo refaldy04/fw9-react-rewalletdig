@@ -58,6 +58,7 @@ main {
 
 .fw9-search-receiver {
   padding: 30px;
+  min-height: 750px;
 }
 
 .fw9-search-receiver a.user {

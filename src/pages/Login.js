@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../asset/css/login.css';
 import FormInput from '../component/FormLogin';
 import Intro from '../component/Intro';
+import { Link } from 'react-router-dom';
 
 export class Login extends Component {
   render() {
@@ -16,7 +17,7 @@ export class Login extends Component {
           <FormInput />
 
           <p className="my-5 text-center fw-signup">
-            Don't have an account? Let's <a href="signup-page.html">Sign Up</a>
+            Don't have an account? Let's <Link to="/sign-up">Sign Up</Link>
           </p>
         </div>
       </section>

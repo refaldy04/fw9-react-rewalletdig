@@ -3,6 +3,7 @@ import Intro from '../component/Intro';
 import '../asset/css/signup.css';
 // import { Link } from 'react-router-dom';
 import FormInput from '../component/FormSignIn';
+import { Link } from 'react-router-dom';
 
 export class SignUp extends Component {
   render() {
@@ -23,7 +24,7 @@ export class SignUp extends Component {
           </div> */}
 
           <p className="my-2 text-center fw-signup">
-            Already have an account? Let's <a href="login-page.html">Login</a>
+            Already have an account? Let's <Link to="/login">Login</Link>
           </p>
         </div>
       </section>
