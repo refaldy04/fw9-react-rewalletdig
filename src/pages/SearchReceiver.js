@@ -23,7 +23,7 @@ const User = () => {
   const hallo = profileData?.map((user) => (
     <div
       onClick={() => {
-        dispatch(selectUser(user.id));
+        dispatch(selectUser({ id: user.id, picture: user.picture }));
         navigate('/input-amount');
       }}
       key={user.id}

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../asset/css/confirmation.css';
 import Example from '../component/Modal';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { logout } from '../redux/reducers/user';
 
 import david from '../asset/img/David.png';
 
@@ -9,6 +11,7 @@ export const Confirmation = () => {
   const recipient = useSelector((state) => state.transfer.dataRecipient);
   const dataTransfer = useSelector((state) => state.transfer.dataTransfer);
   const profile = useSelector((state) => state.profile.data);
+  const dispatch = useDispatch();
 
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
@@ -23,6 +26,10 @@ export const Confirmation = () => {
   React.useEffect(() => {
     console.log('ini data profile', dataTransfer.time);
   }, []);
+
+  const onLogout = () => {
+    dispatch(logout());
+  };
   return (
     <>
       <nav className="fw9-navbar">
@@ -79,28 +86,28 @@ export const Confirmation = () => {
         <div className="d-flex gap-3">
           <div className="col-lg-3 flex-column justify-content-between bg-light fw9-menu-list d-none d-lg-flex">
             <div className="d-flex flex-column gap-5">
-              <a href="home-page.html" className="d-flex gap-4 fw9-semibold">
+              <Link to="/dashboard" className="d-flex gap-4 fw9-semibold">
                 <i data-feather="grid" className="fw9-menu"></i>
                 <h3 className="fw9-menu">Dashboard</h3>
-              </a>
-              <a href="search-receiver-page.html" className="d-flex gap-4">
-                <i data-feather="arrow-up" className="fw9-menu-active"></i>
-                <h3 className="fw9-menu-active">Transfer</h3>
-              </a>
-              <a href="top-up-page.html" className="d-flex gap-4">
+              </Link>
+              <Link to="/search-receiver" className="d-flex gap-4">
+                <i data-feather="arrow-up" className="fw9-menu-active fw-bold"></i>
+                <h3 className="fw9-menu-active fw-bold">Transfer</h3>
+              </Link>
+              <Link to="/top-up" href="top-up-page.html" className="d-flex gap-4">
                 <i data-feather="arrow-down" className="fw9-menu"></i>
                 <h3 className="fw9-menu">Top Up</h3>
-              </a>
-              <a href="profile-1-page.html" className="d-flex gap-4">
-                <i data-feather="user" className="fw9-menu"></i>
+              </Link>
+              <Link to="/profile" className="d-flex gap-4">
+                <i data-feather="user" className="fw9-menu-active"></i>
                 <h3 className="fw9-menu">Profile</h3>
-              </a>
+              </Link>
             </div>
             <div>
-              <div className="d-flex gap-4">
+              <Link to="/login" onClick={onLogout} className=" d-flex gap-4">
                 <i data-feather="log-out" className="fw9-menu"></i>
                 <h3 className="fw9-menu">Log Out</h3>
-              </div>
+              </Link>
             </div>
           </div>
 
@@ -108,7 +115,7 @@ export const Confirmation = () => {
             <p className="transfer-header">Transfer To</p>
             <div className="d-flex align-items-start justify-content-between flex-column flex-xl-row fw9-receiver">
               <div className="d-flex align-items-start gap-2">
-                <img src={david} alt="user" className="img-fluid" />
+                <img src={recipient.picture ? `https://res.cloudinary.com/dwxrkcas3/image/upload/${recipient.picture}` : '/default-profile-pic.jpg'} alt="user" className="img-fluid profile-pic rounded" />
                 <div className="d-flex flex-column justify-content-between">
                   <h5 className="name-history">{recipient.fullname}</h5>
                   <p className="type-history">{recipient.phone_number}</p>

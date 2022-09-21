@@ -15,7 +15,8 @@ const transfer = createSlice({
     selectUser: (state, action) => {
       console.log('wkwkwkwkwkwkwkwkwk');
       console.log('ini action payload transfer', action.payload);
-      state.dataTransfer.recipient_id = action.payload;
+      state.dataTransfer.recipient_id = action.payload.id;
+      state.dataTransfer.picture = action.payload.picture;
       console.log('ini dari reducers transfer', state.dataTransfer);
     },
     inputAmount: (state, action) => {
